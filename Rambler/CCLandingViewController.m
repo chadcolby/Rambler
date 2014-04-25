@@ -7,6 +7,7 @@
 //
 
 #import "CCLandingViewController.h"
+#import "CRMotionView.h"
 
 @interface CCLandingViewController ()
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    CRMotionView *motionView = [[CRMotionView alloc] initWithFrame:self.view.bounds];
+    [motionView setImage:[UIImage imageNamed:@"smallBG"]];
+    motionView.scrollIndicatorEnabled = NO;
+    [self.view addSubview:motionView];
+
 
 }
 
