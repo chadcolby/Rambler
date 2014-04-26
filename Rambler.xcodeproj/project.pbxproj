@@ -22,6 +22,7 @@
 		8D0E0C5C1909FB31005E3CFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D0E0C5A1909FB31005E3CFE /* InfoPlist.strings */; };
 		8D0E0C5E1909FB31005E3CFE /* RamblerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0E0C5D1909FB31005E3CFE /* RamblerTests.m */; };
 		8D0E0C6B1909FB71005E3CFE /* CCLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0E0C6A1909FB71005E3CFE /* CCLandingViewController.m */; };
+		8D843CC7190C2C2100DAA4B7 /* CCButtonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D843CC6190C2C2100DAA4B7 /* CCButtonClass.m */; };
 		8DECED3E1909FD4A002FD98D /* smallBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DECED3D1909FD4A002FD98D /* smallBG.png */; };
 		8DECED421909FDB9002FD98D /* ios7_app_icon_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DECED3F1909FDB9002FD98D /* ios7_app_icon_iphone@2x.png */; };
 		8DECED431909FDB9002FD98D /* settings_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DECED401909FDB9002FD98D /* settings_icon@2x.png */; };
@@ -59,6 +60,8 @@
 		8D0E0C5D1909FB31005E3CFE /* RamblerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RamblerTests.m; sourceTree = "<group>"; };
 		8D0E0C691909FB71005E3CFE /* CCLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLandingViewController.h; sourceTree = "<group>"; };
 		8D0E0C6A1909FB71005E3CFE /* CCLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLandingViewController.m; sourceTree = "<group>"; };
+		8D843CC5190C2C2100DAA4B7 /* CCButtonClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCButtonClass.h; sourceTree = "<group>"; };
+		8D843CC6190C2C2100DAA4B7 /* CCButtonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCButtonClass.m; sourceTree = "<group>"; };
 		8DECED3D1909FD4A002FD98D /* smallBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = smallBG.png; path = ../../../../../Desktop/smallBG.png; sourceTree = "<group>"; };
 		8DECED3F1909FDB9002FD98D /* ios7_app_icon_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ios7_app_icon_iphone@2x.png"; path = "../../../../../Desktop/rambler/ios7_app_icon_iphone@2x.png"; sourceTree = "<group>"; };
 		8DECED401909FDB9002FD98D /* settings_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings_icon@2x.png"; path = "../../../../../Desktop/rambler/settings_icon@2x.png"; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				8D0E0C411909FB31005E3CFE /* CCAppDelegate.h */,
 				8D0E0C421909FB31005E3CFE /* CCAppDelegate.m */,
 				8D0E0C441909FB31005E3CFE /* Main.storyboard */,
+				8D843CC5190C2C2100DAA4B7 /* CCButtonClass.h */,
+				8D843CC6190C2C2100DAA4B7 /* CCButtonClass.m */,
 				8D0E0C671909FB41005E3CFE /* Views */,
 				8D0E0C4A1909FB31005E3CFE /* Images.xcassets */,
 				8DECED3D1909FD4A002FD98D /* smallBG.png */,
@@ -317,6 +322,7 @@
 			files = (
 				8D0E0C6B1909FB71005E3CFE /* CCLandingViewController.m in Sources */,
 				8D0E0C431909FB31005E3CFE /* CCAppDelegate.m in Sources */,
+				8D843CC7190C2C2100DAA4B7 /* CCButtonClass.m in Sources */,
 				8D0E0C3F1909FB30005E3CFE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

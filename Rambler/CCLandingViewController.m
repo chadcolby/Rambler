@@ -8,6 +8,7 @@
 
 #import "CCLandingViewController.h"
 #import "CRMotionView.h"
+#import "CCButtonClass.h"
 
 @interface CCLandingViewController ()
 
@@ -18,18 +19,47 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    CRMotionView *motionView = [[CRMotionView alloc] initWithFrame:self.view.bounds];
-    [motionView setImage:[UIImage imageNamed:@"smallBG"]];
-    motionView.scrollIndicatorEnabled = NO;
-    [self.view addSubview:motionView];
-
-
+    [self initialViewSetUp];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 
+}
+
+- (void)initialViewSetUp
+{
+    CRMotionView *motionView = [[CRMotionView alloc] initWithFrame:self.view.bounds];
+    [motionView setImage:[UIImage imageNamed:@"smallBG"]];
+    motionView.scrollIndicatorEnabled = NO;
+    [self.view addSubview:motionView];
+    
+    CGRect buttonFrame = CGRectMake(20, 200, 280, 50);
+    
+    CCButtonClass *mapButton = [[CCButtonClass alloc] initWithFrame:buttonFrame];
+    [mapButton setTitle:@"Show Map" forState:UIControlStateNormal];
+    [mapButton addTarget:self action:@selector(showMapPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:mapButton];
+    
+    CCButtonClass *settingsButton = [[CCButtonClass alloc] initWithFrame:CGRectMake(buttonFrame.origin.x,
+                                                                                    buttonFrame.origin.y + 70,
+                                                                                    buttonFrame.size.width,
+                                                                                    buttonFrame.size.height)];
+    [settingsButton setTitle:@"Settings" forState:UIControlStateNormal];
+    [settingsButton addTarget:self action:@selector(settingsPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:settingsButton];
+}
+
+- (void)showMapPressed:(id)sender
+{
+    NSLog(@"Show Map");
+}
+
+- (void)settingsPressed:(id)sender
+{
+    NSLog(@"settings pressed");
 }
 
 /*
