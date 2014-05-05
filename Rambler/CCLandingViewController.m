@@ -9,8 +9,11 @@
 #import "CCLandingViewController.h"
 #import "CRMotionView.h"
 #import "CCButtonClass.h"
+#import "CCMapPageViewController.h"
 
 @interface CCLandingViewController ()
+
+
 
 @end
 
@@ -23,6 +26,17 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -31,6 +45,9 @@
 
 - (void)initialViewSetUp
 {
+
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
     CRMotionView *motionView = [[CRMotionView alloc] initWithFrame:self.view.bounds];
     [motionView setImage:[UIImage imageNamed:@"smallBG"]];
     motionView.scrollIndicatorEnabled = NO;
@@ -50,11 +67,17 @@
     [settingsButton setTitle:@"Settings" forState:UIControlStateNormal];
     [settingsButton addTarget:self action:@selector(settingsPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:settingsButton];
+    
+
+
+    
 }
 
 - (void)showMapPressed:(id)sender
 {
     NSLog(@"Show Map");
+    [self performSegueWithIdentifier:@"pushToMap" sender:self];
+
 }
 
 - (void)settingsPressed:(id)sender
@@ -62,15 +85,17 @@
     NSLog(@"settings pressed");
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"pushToMap"]) {
+        
+    }
+
 }
-*/
+
 
 @end
