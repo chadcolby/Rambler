@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CCLine.h"
+
+@protocol RouteLineDelegate <NSObject>
+
+- (void)mapPointsFromDrawnLine:(CCLine *)drawnLine;
+
+@end
 
 @interface CCDrawableView : UIView
+
+@property (unsafe_unretained) id <RouteLineDelegate> delegate;
 
 @property (strong, nonatomic) NSMutableArray *completedLines;
 @property (strong, nonatomic) NSMutableDictionary *linesInProgress;

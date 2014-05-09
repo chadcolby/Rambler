@@ -7,11 +7,11 @@
 //
 
 #import "CCDrawableView.h"
-#import "CCLine.h"
 
 @interface CCDrawableView ()
 
 @property (strong, nonatomic) UIView *pointerIndicator;
+
 
 @end
 
@@ -125,9 +125,7 @@
         if (completedLine) {
             [self.completedLines addObject:completedLine];
             [self.linesInProgress removeObjectForKey:key];
-            NSLog(@"Start X: %f Start Y: %f ", completedLine.startPoint.x, completedLine.startPoint.y);
-            NSLog(@"End X: %f End Y: %f ", completedLine.endPoint.x, completedLine.endPoint.y);
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"doneDrawingLine" object:self];
+            [self.delegate mapPointsFromDrawnLine:completedLine];
         }
     }
     self.pointerIndicator.hidden = YES;

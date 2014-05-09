@@ -10,9 +10,10 @@
 #import "CCDrawableView.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "CCPinAnnotations.h"
 
 
-@interface CCMapPageViewController () <CLLocationManagerDelegate>
+@interface CCMapPageViewController () <CLLocationManagerDelegate, RouteLineDelegate>
 
 @property (strong, nonatomic) MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
@@ -26,8 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishedDrawingRouteLine:) name:@"doneDrawingLine" object:nil];
     
     self.mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
     self.mapView.showsUserLocation = YES;
@@ -50,7 +49,7 @@
     self.drawableView.hidden = YES;
     [self.view addSubview:self.drawableView];
     
-    
+    self.drawableView.delegate = self;
 
 
 }
@@ -86,10 +85,6 @@
     }
 }
 
-- (void)finishedDrawingRouteLine:(CCDrawableView *)sender
-{
-    NSLog(@"%@", [sender class] );
-}
 /*
 #pragma mark - Navigation
 
@@ -100,5 +95,20 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (void)mapPointsFromDrawnLine:(CCLine *)drawnLine
+{
+    NSLog(@">>>>> %f and %f", drawnLine.startPoint.x, drawnLine.startPoint.y);
+    CLLocationCoordinate2D drawnStartPosition = [self.mapView convertPoint:drawnLine.startPoint toCoordinateFromView:self.mapView];
+    CLLocationCoordinate2D drawnEndPosition = [self.mapView convertPoint:drawnLine.endPoint toCoordinateFromView:self.mapView];
+    NSLog(@"%f and %f", drawnStartPosition.latitude, drawnStartPosition.longitude);
+    CCPinAnnotations *startPin = [[CCPinAnnotations alloc] initWithStart:drawnStartPosition];
+    [self.mapView addAnnotation:startPin];
+    CCPinAnnotations *endPin = [[CCPinAnnotations alloc] initWithStart:drawnEndPosition];
+    [endPin changePinColor:MKPinAnnotationColorPurple];
+    [self.mapView addAnnotation:endPin];
+
+}
 
 @end
