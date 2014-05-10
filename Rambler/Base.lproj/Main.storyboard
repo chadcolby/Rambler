@@ -37,6 +37,12 @@
                     <view key="view" contentMode="scaleToFill" id="N7K-kg-617">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dpv-Mj-YpG">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jbw-4c-wgb">
@@ -49,13 +55,15 @@
                                 <segment title="Second"/>
                             </segments>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="aMp-rq-dn6">
+                        <barButtonItem key="rightBarButtonItem" image="Map_Path" id="aMp-rq-dn6">
                             <connections>
                                 <action selector="routeButtonPressed:" destination="4qN-2b-eh1" id="uGc-9w-gKX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="routeButton" destination="aMp-rq-dn6" id="kfM-dy-z76"/>
+                        <outlet property="routingIndicator" destination="dpv-Mj-YpG" id="939-dW-ZtP"/>
                         <outlet property="selectorControl" destination="x1Q-rL-jgD" id="Nbg-5C-oVn"/>
                     </connections>
                 </viewController>
@@ -100,6 +108,9 @@
             <point key="canvasLocation" x="2179" y="-217"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Map_Path" width="26" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

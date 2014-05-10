@@ -75,14 +75,12 @@
 
 - (void)showMapPressed:(id)sender
 {
-    NSLog(@"Show Map");
     [self performSegueWithIdentifier:@"pushToMap" sender:self];
-
 }
 
 - (void)settingsPressed:(id)sender
 {
-    NSLog(@"settings pressed");
+
 }
 
 

@@ -15,6 +15,8 @@
 
 @interface CCMapPageViewController () <CLLocationManagerDelegate, RouteLineDelegate, MKMapViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *routingIndicator;
+
 @property (strong, nonatomic) MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CCDrawableView *drawableView;
@@ -38,6 +40,9 @@
     self.mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
     self.mapView.showsUserLocation = YES;
     self.mapView.delegate = self;
+    
+    self.routeButton.enabled = NO;
+    
     MKCoordinateRegion region;
     self.locationManager = [[CLLocationManager alloc] init];
     region.center.latitude = self.locationManager.location.coordinate.latitude;
@@ -83,12 +88,15 @@
             self.mapView.zoomEnabled = YES;
             self.mapView.rotateEnabled = YES;
             self.drawableView.hidden = YES;
+            self.routeButton.enabled = NO;
+            
         } else if (selectedIndex == 1)
         {
             self.mapView.scrollEnabled = NO;
             self.mapView.zoomEnabled = NO;
             self.mapView.rotateEnabled = NO;
             self.drawableView.hidden = NO;
+            self.routeButton.enabled = YES;
             
             [self.mapView removeAnnotations:self.annotationsArray];
             [self.mapView removeOverlay:self.routeDetails.polyline];
@@ -143,6 +151,7 @@
         if (error) {
             NSLog(@"%@", error);
         } else {
+
             self.endPlacemark = [[MKPlacemark alloc] initWithPlacemark:[placemarks lastObject]];
             MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc] init];
             [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
@@ -155,6 +164,7 @@
                 } else {
                     self.routeDetails = response.routes.lastObject;
                     [self.mapView addOverlay:self.routeDetails.polyline];
+
                 }
             }];
         }
