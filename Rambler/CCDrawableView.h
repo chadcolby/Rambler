@@ -24,5 +24,6 @@
 @property (nonatomic) BOOL allowsDrawing;
 
 - (void)theEndOfDrawing:(NSSet *)touches;
+- (void)clearAllLines;
 
 @end

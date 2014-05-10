@@ -49,7 +49,11 @@
                                 <segment title="Second"/>
                             </segments>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="aMp-rq-dn6"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="aMp-rq-dn6">
+                            <connections>
+                                <action selector="routeButtonPressed:" destination="4qN-2b-eh1" id="uGc-9w-gKX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="selectorControl" destination="x1Q-rL-jgD" id="Nbg-5C-oVn"/>

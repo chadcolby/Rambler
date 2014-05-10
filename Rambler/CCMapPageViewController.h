@@ -11,5 +11,6 @@
 @interface CCMapPageViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *selectorControl;
+- (IBAction)routeButtonPressed:(id)sender;
 
 @end
