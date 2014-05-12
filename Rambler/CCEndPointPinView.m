@@ -38,7 +38,9 @@
 
 - (void)moveViewPressed:(id)sender
 {
-    NSLog(@"button pressed");
+    NSLog(@"button pressed at %f and %f", self.center.x, self.center.y);
+
+    [self.delegate buttonPressedForRelocateView:self.center];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

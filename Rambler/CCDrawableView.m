@@ -9,10 +9,11 @@
 #import "CCDrawableView.h"
 #import "CCEndPointPinView.h"
 
-@interface CCDrawableView ()
+@interface CCDrawableView ()  <RelocateEndPointDelegate>
 
 @property (strong, nonatomic) CCEndPointPinView *pointerIndicator;
-
+@property (strong, nonatomic) UIView *tempView;
+@property (nonatomic) BOOL tempViewIsActive;
 
 @end
 
@@ -29,7 +30,9 @@
         self.multipleTouchEnabled = NO;
         
         self.pointerIndicator = [[CCEndPointPinView alloc] initWithFrame:CGRectMake(25, 25, 28, 28)];
+        self.pointerIndicator.delegate = self;
         [self addSubview:self.pointerIndicator];
+        self.tempViewIsActive = NO;
     }
     return self;
 }
@@ -59,6 +62,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
     for (UITouch *drawingFinger in touches) {
         if ([drawingFinger tapCount] > 1)  {
             [self clearAllLines];
@@ -128,6 +132,30 @@
     self.pointerIndicator.hidden = NO;
     [self setNeedsDisplay];
     
+}
+
+
+#pragma mark - Relocate end point delegate methods
+
+- (void)buttonPressedForRelocateView:(CGPoint)pointForCenter
+{
+    self.tempView = [[UIView alloc] initWithFrame:CGRectMake(20, (self.bounds.size.height/2) - 100, 280, 200)];
+    self.tempView.backgroundColor = [UIColor lightGrayColor];
+    self.tempView.alpha = 0.75;
+    [self addSubview:self.tempView];
+    
+    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(self.tempView.bounds.size.width-30, self.tempView.bounds.size.height-200, 30, 30)];
+    closeButton.backgroundColor = [UIColor whiteColor];
+    [closeButton addTarget:self action:@selector(closeZoomView:) forControlEvents:UIControlEventTouchUpInside];
+    [self.tempView addSubview:closeButton];
+    
+    self.tempViewIsActive = YES;
+}
+
+- (void)closeZoomView:(id)sender
+{
+    [self.tempView removeFromSuperview];
+    [self clearAllLines];
 }
 
 @end

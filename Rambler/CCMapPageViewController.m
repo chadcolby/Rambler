@@ -12,12 +12,13 @@
 #import <CoreLocation/CoreLocation.h>
 #import "CCPinAnnotations.h"
 
-
 @interface CCMapPageViewController () <CLLocationManagerDelegate, RouteLineDelegate, MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *routingIndicator;
 
 @property (strong, nonatomic) MKMapView *mapView;
+
+
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CCDrawableView *drawableView;
 
@@ -28,6 +29,7 @@
 @property (strong, nonatomic) MKPlacemark *endPlacemark;
 @property (strong, nonatomic) MKPlacemark *startPlacemark;
 @property (strong, nonatomic) MKRoute *routeDetails;
+
 
 @end
 
@@ -179,4 +181,5 @@
     routeLineRenderer.lineWidth = 5;
     return routeLineRenderer;
 }
+
 @end

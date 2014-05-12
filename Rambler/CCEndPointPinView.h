@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+
+@protocol RelocateEndPointDelegate <NSObject>
+
+- (void)buttonPressedForRelocateView:(CGPoint)pointForCenter;
+
+@end
 
 @interface CCEndPointPinView : UIView
+
+@property (unsafe_unretained) id <RelocateEndPointDelegate> delegate;
 
 @property (nonatomic) CGPoint anchoredPoint;
 @property (strong, nonatomic) UIButton *moveViewButton;
