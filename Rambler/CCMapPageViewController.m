@@ -120,10 +120,15 @@
 
 - (void)mapPointsFromDrawnLine:(CCLine *)drawnLine
 {
-    NSLog(@">>>>> %f and %f", drawnLine.startPoint.x, drawnLine.startPoint.y);
+    NSLog(@">>>>> %f and %f", drawnLine.endPoint.x, drawnLine.endPoint.y);
     self.startCoordinate = [self.mapView convertPoint:drawnLine.startPoint toCoordinateFromView:self.mapView];
     self.endCoordinate = [self.mapView convertPoint:drawnLine.endPoint toCoordinateFromView:self.mapView];
-
+    NSLog(@"end coordinates: %f and %f", self.endCoordinate.latitude, self.endCoordinate.longitude);
+    NSMutableDictionary *coordinateInfo = [[NSMutableDictionary alloc] init];
+    [coordinateInfo setObject:[NSNumber numberWithDouble:self.endCoordinate.latitude] forKey:@"endLat"];
+    [coordinateInfo setObject:[NSNumber numberWithDouble:self.endCoordinate.longitude] forKey:@"endLon"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"endCoordinates" object:self userInfo:coordinateInfo];
+    
 }
 
 - (IBAction)routeButtonPressed:(id)sender
