@@ -12,5 +12,6 @@
 
 @property (nonatomic) CGPoint startPoint;
 @property (nonatomic) CGPoint endPoint;
+@property (strong, nonatomic) UIView *pinView;
 
 @end

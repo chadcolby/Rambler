@@ -22,6 +22,9 @@
 		8D0E0C5C1909FB31005E3CFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D0E0C5A1909FB31005E3CFE /* InfoPlist.strings */; };
 		8D0E0C5E1909FB31005E3CFE /* RamblerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0E0C5D1909FB31005E3CFE /* RamblerTests.m */; };
 		8D0E0C6B1909FB71005E3CFE /* CCLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0E0C6A1909FB71005E3CFE /* CCLandingViewController.m */; };
+		8D440AA419204448006AF9E7 /* Pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D440AA319204448006AF9E7 /* Pin@2x.png */; };
+		8D440AA61920445C006AF9E7 /* Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D440AA51920445C006AF9E7 /* Pin.png */; };
+		8D440AA919204736006AF9E7 /* CCEndPointPinView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D440AA819204736006AF9E7 /* CCEndPointPinView.m */; };
 		8D4E71D6191D950E0055DCD2 /* CCPinAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E71D5191D950E0055DCD2 /* CCPinAnnotations.m */; };
 		8D4E71D8191DAF090055DCD2 /* Map_Path.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D4E71D7191DAF090055DCD2 /* Map_Path.png */; };
 		8D4E71DA191DAF1D0055DCD2 /* Map_Path@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D4E71D9191DAF1D0055DCD2 /* Map_Path@2x.png */; };
@@ -66,6 +69,10 @@
 		8D0E0C5D1909FB31005E3CFE /* RamblerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RamblerTests.m; sourceTree = "<group>"; };
 		8D0E0C691909FB71005E3CFE /* CCLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLandingViewController.h; sourceTree = "<group>"; };
 		8D0E0C6A1909FB71005E3CFE /* CCLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLandingViewController.m; sourceTree = "<group>"; };
+		8D440AA319204448006AF9E7 /* Pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pin@2x.png"; sourceTree = "<group>"; };
+		8D440AA51920445C006AF9E7 /* Pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pin.png; sourceTree = "<group>"; };
+		8D440AA719204736006AF9E7 /* CCEndPointPinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEndPointPinView.h; sourceTree = "<group>"; };
+		8D440AA819204736006AF9E7 /* CCEndPointPinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEndPointPinView.m; sourceTree = "<group>"; };
 		8D4E71D4191D950E0055DCD2 /* CCPinAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPinAnnotations.h; sourceTree = "<group>"; };
 		8D4E71D5191D950E0055DCD2 /* CCPinAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPinAnnotations.m; sourceTree = "<group>"; };
 		8D4E71D7191DAF090055DCD2 /* Map_Path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map_Path.png; sourceTree = "<group>"; };
@@ -154,6 +161,8 @@
 				8DAEB683191C220100223F86 /* Drawing Objects */,
 				8D0E0C671909FB41005E3CFE /* Views */,
 				8D0E0C4A1909FB31005E3CFE /* Images.xcassets */,
+				8D440AA51920445C006AF9E7 /* Pin.png */,
+				8D440AA319204448006AF9E7 /* Pin@2x.png */,
 				8D4E71D9191DAF1D0055DCD2 /* Map_Path@2x.png */,
 				8D4E71D7191DAF090055DCD2 /* Map_Path.png */,
 				8DECED3D1909FD4A002FD98D /* smallBG.png */,
@@ -217,6 +226,8 @@
 		8DAEB683191C220100223F86 /* Drawing Objects */ = {
 			isa = PBXGroup;
 			children = (
+				8D440AA719204736006AF9E7 /* CCEndPointPinView.h */,
+				8D440AA819204736006AF9E7 /* CCEndPointPinView.m */,
 				8DAEB687191C235D00223F86 /* CCDrawableView.h */,
 				8DAEB688191C235D00223F86 /* CCDrawableView.m */,
 				8DAEB684191C222200223F86 /* CCLine.h */,
@@ -310,8 +321,10 @@
 				8DECED441909FDB9002FD98D /* spotlight_icon@2x.png in Resources */,
 				8DECED3E1909FD4A002FD98D /* smallBG.png in Resources */,
 				8DECED421909FDB9002FD98D /* ios7_app_icon_iphone@2x.png in Resources */,
+				8D440AA61920445C006AF9E7 /* Pin.png in Resources */,
 				8D0E0C4B1909FB31005E3CFE /* Images.xcassets in Resources */,
 				8D0E0C3D1909FB30005E3CFE /* InfoPlist.strings in Resources */,
+				8D440AA419204448006AF9E7 /* Pin@2x.png in Resources */,
 				8D0E0C461909FB31005E3CFE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +382,7 @@
 				8D0E0C6B1909FB71005E3CFE /* CCLandingViewController.m in Sources */,
 				8D0E0C431909FB31005E3CFE /* CCAppDelegate.m in Sources */,
 				8DC5CCA31918189F000673FE /* CCMapPageViewController.m in Sources */,
+				8D440AA919204736006AF9E7 /* CCEndPointPinView.m in Sources */,
 				8D843CC7190C2C2100DAA4B7 /* CCButtonClass.m in Sources */,
 				8D0E0C3F1909FB30005E3CFE /* main.m in Sources */,
 				8DAEB686191C222200223F86 /* CCLine.m in Sources */,

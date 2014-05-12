@@ -7,10 +7,11 @@
 //
 
 #import "CCDrawableView.h"
+#import "CCEndPointPinView.h"
 
 @interface CCDrawableView ()
 
-@property (strong, nonatomic) UIView *pointerIndicator;
+@property (strong, nonatomic) CCEndPointPinView *pointerIndicator;
 
 
 @end
@@ -25,14 +26,9 @@
         self.completedLines = [[NSMutableArray alloc] init];
         
         self.backgroundColor = [UIColor clearColor];
-        self.multipleTouchEnabled = YES;
+        self.multipleTouchEnabled = NO;
         
-        self.pointerIndicator = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 20, 20)];
-        self.pointerIndicator.backgroundColor = [UIColor whiteColor];
-        self.pointerIndicator.alpha = 0.5;
-        self.pointerIndicator.clipsToBounds = YES;
-        self.pointerIndicator.layer.cornerRadius = 10.f;
-        self.pointerIndicator.hidden = YES;
+        self.pointerIndicator = [[CCEndPointPinView alloc] initWithFrame:CGRectMake(25, 25, 28, 28)];
         [self addSubview:self.pointerIndicator];
     }
     return self;
@@ -78,7 +74,7 @@
         CCLine *currentLine = [[CCLine alloc] init];
         currentLine.startPoint = lock;
         currentLine.endPoint = lock;
-        self.pointerIndicator.hidden = NO;
+        self.pointerIndicator.hidden = YES;
         self.pointerIndicator.center = lock;
         
         [self.linesInProgress setObject:currentLine forKey:key];
@@ -92,7 +88,8 @@
         CCLine *anotherNewLine = [self.linesInProgress objectForKey:anotherKey];
         CGPoint lock = [movingTouch locationInView:self];
         anotherNewLine.endPoint = lock;
-        self.pointerIndicator.center = lock;
+        self.pointerIndicator.hidden = NO;
+        self.pointerIndicator.center = CGPointMake(lock.x + 11, lock.y - 9);
     }
     
     [self setNeedsDisplay];
@@ -128,7 +125,7 @@
             [self.delegate mapPointsFromDrawnLine:completedLine];
         }
     }
-    self.pointerIndicator.hidden = YES;
+    self.pointerIndicator.hidden = NO;
     [self setNeedsDisplay];
     
 }
