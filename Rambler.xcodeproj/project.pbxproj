@@ -30,6 +30,8 @@
 		8D4E71D8191DAF090055DCD2 /* Map_Path.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D4E71D7191DAF090055DCD2 /* Map_Path.png */; };
 		8D4E71DA191DAF1D0055DCD2 /* Map_Path@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D4E71D9191DAF1D0055DCD2 /* Map_Path@2x.png */; };
 		8D843CC7190C2C2100DAA4B7 /* CCButtonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D843CC6190C2C2100DAA4B7 /* CCButtonClass.m */; };
+		8DA35BC819213555008DF664 /* Checkbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA35BC719213555008DF664 /* Checkbox@2x.png */; };
+		8DA35BCA19213564008DF664 /* Checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA35BC919213564008DF664 /* Checkbox.png */; };
 		8DAEB686191C222200223F86 /* CCLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAEB685191C222200223F86 /* CCLine.m */; };
 		8DAEB689191C235D00223F86 /* CCDrawableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAEB688191C235D00223F86 /* CCDrawableView.m */; };
 		8DC5CCA31918189F000673FE /* CCMapPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC5CCA21918189F000673FE /* CCMapPageViewController.m */; };
@@ -82,6 +84,8 @@
 		8D4E71D9191DAF1D0055DCD2 /* Map_Path@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Map_Path@2x.png"; sourceTree = "<group>"; };
 		8D843CC5190C2C2100DAA4B7 /* CCButtonClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCButtonClass.h; sourceTree = "<group>"; };
 		8D843CC6190C2C2100DAA4B7 /* CCButtonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCButtonClass.m; sourceTree = "<group>"; };
+		8DA35BC719213555008DF664 /* Checkbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkbox@2x.png"; sourceTree = "<group>"; };
+		8DA35BC919213564008DF664 /* Checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checkbox.png; sourceTree = "<group>"; };
 		8DAEB684191C222200223F86 /* CCLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLine.h; sourceTree = "<group>"; };
 		8DAEB685191C222200223F86 /* CCLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLine.m; sourceTree = "<group>"; };
 		8DAEB687191C235D00223F86 /* CCDrawableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDrawableView.h; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				8DAEB683191C220100223F86 /* Drawing Objects */,
 				8D0E0C671909FB41005E3CFE /* Views */,
 				8D0E0C4A1909FB31005E3CFE /* Images.xcassets */,
+				8DA35BC919213564008DF664 /* Checkbox.png */,
+				8DA35BC719213555008DF664 /* Checkbox@2x.png */,
 				8D440AA51920445C006AF9E7 /* Pin.png */,
 				8D440AA319204448006AF9E7 /* Pin@2x.png */,
 				8D4E71D9191DAF1D0055DCD2 /* Map_Path@2x.png */,
@@ -326,11 +332,13 @@
 				8DECED441909FDB9002FD98D /* spotlight_icon@2x.png in Resources */,
 				8DECED3E1909FD4A002FD98D /* smallBG.png in Resources */,
 				8DECED421909FDB9002FD98D /* ios7_app_icon_iphone@2x.png in Resources */,
+				8DA35BCA19213564008DF664 /* Checkbox.png in Resources */,
 				8D440AA61920445C006AF9E7 /* Pin.png in Resources */,
 				8D0E0C4B1909FB31005E3CFE /* Images.xcassets in Resources */,
 				8D0E0C3D1909FB30005E3CFE /* InfoPlist.strings in Resources */,
 				8D440AA419204448006AF9E7 /* Pin@2x.png in Resources */,
 				8D0E0C461909FB31005E3CFE /* Main.storyboard in Resources */,
+				8DA35BC819213555008DF664 /* Checkbox@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

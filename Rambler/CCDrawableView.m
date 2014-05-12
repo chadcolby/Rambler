@@ -8,6 +8,7 @@
 
 #import "CCDrawableView.h"
 #import "CCEndPointPinView.h"
+#import "CCRelocateEndPointView.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
@@ -15,10 +16,10 @@
 
 @property (strong, nonatomic) CCEndPointPinView *pointerIndicator;
 @property (strong, nonatomic) UIView *tempView;
-@property (strong, nonatomic) MKMapView *zoomedInMapView;
-@property (nonatomic) BOOL tempViewIsActive;
+@property (strong, nonatomic) CCRelocateEndPointView *zoomedRelocateView;
 @property (nonatomic) CGPoint movableEndPoint;
 @property (nonatomic) CLLocationCoordinate2D endCoordinates;
+@property (strong, nonatomic) CCRelocateEndPointView *relocateEndPointView;
 
 @end
 
@@ -37,11 +38,10 @@
         self.pointerIndicator = [[CCEndPointPinView alloc] initWithFrame:CGRectMake(25, 25, 28, 28)];
         self.pointerIndicator.delegate = self;
         [self addSubview:self.pointerIndicator];
-        self.tempViewIsActive = NO;
         
-        self.zoomedInMapView = [[MKMapView alloc] init];
+        self.zoomedRelocateView = [[CCRelocateEndPointView alloc] initWithFrame:CGRectMake(20, (self.bounds.size.height/2) - 100, 280, 200)];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(retrieveEndCoordinates:) name:@"endCoordinates" object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(retrieveEndCoordinates:) name:@"endCoordinates" object:nil];
     }
     return self;
 }
@@ -149,44 +149,47 @@
 
 - (void)buttonPressedForRelocateView:(CGPoint)pointForCenter
 {
-    self.tempView = [[UIView alloc] initWithFrame:CGRectMake(20, (self.bounds.size.height/2) - 100, 280, 200)];
-    self.tempView.backgroundColor = [UIColor lightGrayColor];
-    [self addSubview:self.tempView];
+    [self addSubview:self.zoomedRelocateView];
+//    self.tempView = [[UIView alloc] initWithFrame:CGRectMake(20, (self.bounds.size.height/2) - 100, 280, 200)];
+//    self.tempView.backgroundColor = [UIColor clearColor];
+//    [self addSubview:self.tempView];
+//    
+//    self.zoomedInMapView.frame = CGRectMake(self.tempView.bounds.origin.x + 10, self.tempView.bounds.origin.y + 10,
+//                                            self.tempView.bounds.size.width-20, self.tempView.bounds.size.height - 20);
+//
+//    MKCoordinateRegion zoomRegion;
+//    zoomRegion.center.latitude = self.endCoordinates.latitude;
+//    zoomRegion.center.longitude = self.endCoordinates.longitude;
+//    zoomRegion.span = MKCoordinateSpanMake(0.005, 0.005);
+//
+//    [self.zoomedInMapView setRegion:zoomRegion];
+//    [self.tempView addSubview:self.zoomedInMapView];
+//    
+//    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(self.tempView.bounds.size.width-21, self.tempView.bounds.size.height-200, 27, 21)];
+//    closeButton.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Checkbox"]];
+//    closeButton.clipsToBounds = YES;
+//    closeButton.layer.cornerRadius = 15.f;
+//    [closeButton addTarget:self action:@selector(closeZoomView:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.tempView addSubview:closeButton];
     
-    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(self.tempView.bounds.size.width-30, self.tempView.bounds.size.height-200, 30, 30)];
-    closeButton.backgroundColor = [UIColor whiteColor];
-    [closeButton addTarget:self action:@selector(closeZoomView:) forControlEvents:UIControlEventTouchUpInside];
-    [self.tempView addSubview:closeButton];
-    
-    self.zoomedInMapView.frame = CGRectMake(self.tempView.bounds.origin.x + 10, self.tempView.bounds.origin.y + 10,
-                                            self.tempView.bounds.size.width-20, self.tempView.bounds.size.height - 20);
 
-    MKCoordinateRegion zoomRegion;
-    zoomRegion.center.latitude = self.endCoordinates.latitude;
-    zoomRegion.center.longitude = self.endCoordinates.longitude;
-    zoomRegion.span = MKCoordinateSpanMake(0.005, 0.005);
-
-    [self.zoomedInMapView setRegion:zoomRegion];
-    [self.tempView addSubview:self.zoomedInMapView];
-    
-    self.tempViewIsActive = YES;
 }
 
-- (void)closeZoomView:(id)sender
-{
-    [self.tempView removeFromSuperview];
-    [self clearAllLines];
-    self.pointerIndicator.hidden = YES;
-}
-
-- (void)retrieveEndCoordinates:(NSNotification *)notification
-{
-    if ([notification.name isEqualToString:@"endCoordinates"]) {
-        NSNumber *latitude = [notification.userInfo objectForKey:@"endLat"];
-        NSNumber *longitude = [notification.userInfo objectForKey:@"endLon"];
-        self.endCoordinates = CLLocationCoordinate2DMake([latitude doubleValue], [longitude doubleValue]);
-        
-    }
-}
+//- (void)closeZoomView:(id)sender
+//{
+//    [self.tempView removeFromSuperview];
+//    [self clearAllLines];
+//    self.pointerIndicator.hidden = YES;
+//}
+//
+//- (void)retrieveEndCoordinates:(NSNotification *)notification
+//{
+//    if ([notification.name isEqualToString:@"endCoordinates"]) {
+//        NSNumber *latitude = [notification.userInfo objectForKey:@"endLat"];
+//        NSNumber *longitude = [notification.userInfo objectForKey:@"endLon"];
+//        self.endCoordinates = CLLocationCoordinate2DMake([latitude doubleValue], [longitude doubleValue]);
+//        
+//    }
+//}
 
 @end
