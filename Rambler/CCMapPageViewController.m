@@ -120,7 +120,6 @@
 
 - (void)mapPointsFromDrawnLine:(CCLine *)drawnLine
 {
-    NSLog(@">>>>> %f and %f", drawnLine.endPoint.x, drawnLine.endPoint.y);
     self.startCoordinate = [self.mapView convertPoint:drawnLine.startPoint toCoordinateFromView:self.mapView];
     self.endCoordinate = [self.mapView convertPoint:drawnLine.endPoint toCoordinateFromView:self.mapView];
     NSLog(@"end coordinates: %f and %f", self.endCoordinate.latitude, self.endCoordinate.longitude);

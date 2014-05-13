@@ -25,13 +25,13 @@
 		8D440AA419204448006AF9E7 /* Pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D440AA319204448006AF9E7 /* Pin@2x.png */; };
 		8D440AA61920445C006AF9E7 /* Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D440AA51920445C006AF9E7 /* Pin.png */; };
 		8D440AA919204736006AF9E7 /* CCEndPointPinView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D440AA819204736006AF9E7 /* CCEndPointPinView.m */; };
-		8D440AAC19204E9B006AF9E7 /* CCRelocateEndPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D440AAB19204E9B006AF9E7 /* CCRelocateEndPointView.m */; };
 		8D4E71D6191D950E0055DCD2 /* CCPinAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E71D5191D950E0055DCD2 /* CCPinAnnotations.m */; };
 		8D4E71D8191DAF090055DCD2 /* Map_Path.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D4E71D7191DAF090055DCD2 /* Map_Path.png */; };
 		8D4E71DA191DAF1D0055DCD2 /* Map_Path@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D4E71D9191DAF1D0055DCD2 /* Map_Path@2x.png */; };
 		8D843CC7190C2C2100DAA4B7 /* CCButtonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D843CC6190C2C2100DAA4B7 /* CCButtonClass.m */; };
 		8DA35BC819213555008DF664 /* Checkbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA35BC719213555008DF664 /* Checkbox@2x.png */; };
 		8DA35BCA19213564008DF664 /* Checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA35BC919213564008DF664 /* Checkbox.png */; };
+		8DA35BCD1922C7F3008DF664 /* CCAdjustMapPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA35BCC1922C7F3008DF664 /* CCAdjustMapPointView.m */; };
 		8DAEB686191C222200223F86 /* CCLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAEB685191C222200223F86 /* CCLine.m */; };
 		8DAEB689191C235D00223F86 /* CCDrawableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAEB688191C235D00223F86 /* CCDrawableView.m */; };
 		8DC5CCA31918189F000673FE /* CCMapPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC5CCA21918189F000673FE /* CCMapPageViewController.m */; };
@@ -76,8 +76,6 @@
 		8D440AA51920445C006AF9E7 /* Pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pin.png; sourceTree = "<group>"; };
 		8D440AA719204736006AF9E7 /* CCEndPointPinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEndPointPinView.h; sourceTree = "<group>"; };
 		8D440AA819204736006AF9E7 /* CCEndPointPinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEndPointPinView.m; sourceTree = "<group>"; };
-		8D440AAA19204E9B006AF9E7 /* CCRelocateEndPointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRelocateEndPointView.h; sourceTree = "<group>"; };
-		8D440AAB19204E9B006AF9E7 /* CCRelocateEndPointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRelocateEndPointView.m; sourceTree = "<group>"; };
 		8D4E71D4191D950E0055DCD2 /* CCPinAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPinAnnotations.h; sourceTree = "<group>"; };
 		8D4E71D5191D950E0055DCD2 /* CCPinAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPinAnnotations.m; sourceTree = "<group>"; };
 		8D4E71D7191DAF090055DCD2 /* Map_Path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map_Path.png; sourceTree = "<group>"; };
@@ -86,6 +84,8 @@
 		8D843CC6190C2C2100DAA4B7 /* CCButtonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCButtonClass.m; sourceTree = "<group>"; };
 		8DA35BC719213555008DF664 /* Checkbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkbox@2x.png"; sourceTree = "<group>"; };
 		8DA35BC919213564008DF664 /* Checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checkbox.png; sourceTree = "<group>"; };
+		8DA35BCB1922C7F3008DF664 /* CCAdjustMapPointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAdjustMapPointView.h; sourceTree = "<group>"; };
+		8DA35BCC1922C7F3008DF664 /* CCAdjustMapPointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAdjustMapPointView.m; sourceTree = "<group>"; };
 		8DAEB684191C222200223F86 /* CCLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLine.h; sourceTree = "<group>"; };
 		8DAEB685191C222200223F86 /* CCLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLine.m; sourceTree = "<group>"; };
 		8DAEB687191C235D00223F86 /* CCDrawableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDrawableView.h; sourceTree = "<group>"; };
@@ -215,8 +215,8 @@
 		8D0E0C671909FB41005E3CFE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8D440AAA19204E9B006AF9E7 /* CCRelocateEndPointView.h */,
-				8D440AAB19204E9B006AF9E7 /* CCRelocateEndPointView.m */,
+				8DA35BCB1922C7F3008DF664 /* CCAdjustMapPointView.h */,
+				8DA35BCC1922C7F3008DF664 /* CCAdjustMapPointView.m */,
 				8DC5CCA11918189F000673FE /* CCMapPageViewController.h */,
 				8DC5CCA21918189F000673FE /* CCMapPageViewController.m */,
 				8D0E0C691909FB71005E3CFE /* CCLandingViewController.h */,
@@ -395,10 +395,10 @@
 				8D0E0C6B1909FB71005E3CFE /* CCLandingViewController.m in Sources */,
 				8D0E0C431909FB31005E3CFE /* CCAppDelegate.m in Sources */,
 				8DC5CCA31918189F000673FE /* CCMapPageViewController.m in Sources */,
+				8DA35BCD1922C7F3008DF664 /* CCAdjustMapPointView.m in Sources */,
 				8D440AA919204736006AF9E7 /* CCEndPointPinView.m in Sources */,
 				8D843CC7190C2C2100DAA4B7 /* CCButtonClass.m in Sources */,
 				8D0E0C3F1909FB30005E3CFE /* main.m in Sources */,
-				8D440AAC19204E9B006AF9E7 /* CCRelocateEndPointView.m in Sources */,
 				8DAEB686191C222200223F86 /* CCLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,14 +16,12 @@
     if (self) {
         
         self.frame = frame;
-        //self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pin"]];
         self.clipsToBounds = YES;
         self.layer.cornerRadius = 10.f;
         
         self.moveViewButton = [[UIButton alloc] initWithFrame:CGRectMake(self.bounds.origin.x, self.bounds.origin.y, 28, 28)];
         [self.moveViewButton addTarget:self action:@selector(moveViewPressed:) forControlEvents:UIControlEventTouchUpInside];
         self.moveViewButton.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pin"]];
-        
 
         [self addSubview:self.moveViewButton];
     }
@@ -31,15 +29,8 @@
     
 }
 
-- (void)longPressToMoveEndPoint:(UILongPressGestureRecognizer *)sender
-{
-    NSLog(@"Long Press Felt");
-}
-
 - (void)moveViewPressed:(id)sender
 {
-    NSLog(@"button pressed at %f and %f", self.center.x, self.center.y);
-
     [self.delegate buttonPressedForRelocateView:self.center];
 }
 /*
