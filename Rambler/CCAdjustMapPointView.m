@@ -21,8 +21,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
         self.backgroundColor = [UIColor clearColor];
         self.adjustView = [[MKMapView alloc] initWithFrame:CGRectMake(self.bounds.origin.x, self.bounds.origin.y + 20, self.bounds.size.width, self.bounds.size.height - 20)];
+        self.adjustView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [self addSubview:self.adjustView];
         
         UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(self.bounds.size.width-21, self.bounds.size.height-280, 27, 21)];
@@ -31,23 +33,28 @@
         [self addSubview:closeButton];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateMapCenter:) name:@"endCoordinates" object:nil];
+        
+        UIImageView *centerPinView = [[UIImageView alloc] initWithFrame:CGRectMake(self.adjustView.center.x - 25, self.adjustView.center.y - 25, 30, 30)];
+        centerPinView.image = [UIImage imageNamed:@"Map_Pin"];
+        [self.adjustView addSubview:centerPinView];
     }
     return self;
 }
 
 - (void)closeZoomView:(id)sender
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"closeButtonPressed" object:self userInfo:nil]; //updates drawable view to allow re-drawing of new route
     [self removeFromSuperview];
+
 }
 
-- (void)updateMapCenter:(NSNotification *)notification
+- (void)updateMapCenter:(NSNotification *)notification //gets correct CLLocationCoord2D based on main map location
 {
     if ([notification.name isEqualToString:@"endCoordinates"]) {
         NSNumber *latitude = [notification.userInfo objectForKey:@"endLat"];
         NSNumber *longitude = [notification.userInfo objectForKey:@"endLon"];
         
         self.endCoordinate = CLLocationCoordinate2DMake([latitude doubleValue], [longitude doubleValue]);
-        NSLog(@"!!!! %f and %f", self.endCoordinate.latitude, self.endCoordinate.longitude);
         [self centerFromMainMap:self.endCoordinate];
         
     }

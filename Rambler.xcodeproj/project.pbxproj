@@ -32,6 +32,8 @@
 		8DA35BC819213555008DF664 /* Checkbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA35BC719213555008DF664 /* Checkbox@2x.png */; };
 		8DA35BCA19213564008DF664 /* Checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA35BC919213564008DF664 /* Checkbox.png */; };
 		8DA35BCD1922C7F3008DF664 /* CCAdjustMapPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA35BCC1922C7F3008DF664 /* CCAdjustMapPointView.m */; };
+		8DA35BCF1922D4ED008DF664 /* Map_Pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA35BCE1922D4ED008DF664 /* Map_Pin@2x.png */; };
+		8DA35BD11922D4FE008DF664 /* Map_Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA35BD01922D4FE008DF664 /* Map_Pin.png */; };
 		8DAEB686191C222200223F86 /* CCLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAEB685191C222200223F86 /* CCLine.m */; };
 		8DAEB689191C235D00223F86 /* CCDrawableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAEB688191C235D00223F86 /* CCDrawableView.m */; };
 		8DC5CCA31918189F000673FE /* CCMapPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC5CCA21918189F000673FE /* CCMapPageViewController.m */; };
@@ -86,6 +88,8 @@
 		8DA35BC919213564008DF664 /* Checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checkbox.png; sourceTree = "<group>"; };
 		8DA35BCB1922C7F3008DF664 /* CCAdjustMapPointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAdjustMapPointView.h; sourceTree = "<group>"; };
 		8DA35BCC1922C7F3008DF664 /* CCAdjustMapPointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAdjustMapPointView.m; sourceTree = "<group>"; };
+		8DA35BCE1922D4ED008DF664 /* Map_Pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Map_Pin@2x.png"; sourceTree = "<group>"; };
+		8DA35BD01922D4FE008DF664 /* Map_Pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map_Pin.png; sourceTree = "<group>"; };
 		8DAEB684191C222200223F86 /* CCLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLine.h; sourceTree = "<group>"; };
 		8DAEB685191C222200223F86 /* CCLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLine.m; sourceTree = "<group>"; };
 		8DAEB687191C235D00223F86 /* CCDrawableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDrawableView.h; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 				8DAEB683191C220100223F86 /* Drawing Objects */,
 				8D0E0C671909FB41005E3CFE /* Views */,
 				8D0E0C4A1909FB31005E3CFE /* Images.xcassets */,
+				8DA35BD01922D4FE008DF664 /* Map_Pin.png */,
+				8DA35BCE1922D4ED008DF664 /* Map_Pin@2x.png */,
 				8DA35BC919213564008DF664 /* Checkbox.png */,
 				8DA35BC719213555008DF664 /* Checkbox@2x.png */,
 				8D440AA51920445C006AF9E7 /* Pin.png */,
@@ -335,8 +341,10 @@
 				8DA35BCA19213564008DF664 /* Checkbox.png in Resources */,
 				8D440AA61920445C006AF9E7 /* Pin.png in Resources */,
 				8D0E0C4B1909FB31005E3CFE /* Images.xcassets in Resources */,
+				8DA35BCF1922D4ED008DF664 /* Map_Pin@2x.png in Resources */,
 				8D0E0C3D1909FB30005E3CFE /* InfoPlist.strings in Resources */,
 				8D440AA419204448006AF9E7 /* Pin@2x.png in Resources */,
+				8DA35BD11922D4FE008DF664 /* Map_Pin.png in Resources */,
 				8D0E0C461909FB31005E3CFE /* Main.storyboard in Resources */,
 				8DA35BC819213555008DF664 /* Checkbox@2x.png in Resources */,
 			);

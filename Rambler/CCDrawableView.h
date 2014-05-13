@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CCLine.h"
+#import "CCAdjustMapPointView.h"
 
 
 @protocol RouteLineDelegate <NSObject>
@@ -23,6 +24,8 @@
 @property (strong, nonatomic) NSMutableArray *completedLines;
 @property (strong, nonatomic) NSMutableDictionary *linesInProgress;
 @property (nonatomic) BOOL allowsDrawing;
+
+@property (strong, nonatomic) CCAdjustMapPointView *adjustEndPointView;
 
 - (void)theEndOfDrawing:(NSSet *)touches;
 - (void)clearAllLines;

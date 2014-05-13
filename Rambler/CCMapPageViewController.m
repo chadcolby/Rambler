@@ -43,6 +43,8 @@
     self.mapView.showsUserLocation = YES;
     self.mapView.delegate = self;
     
+    self.mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    
     self.routeButton.enabled = NO;
     
     MKCoordinateRegion region;
@@ -122,11 +124,10 @@
 {
     self.startCoordinate = [self.mapView convertPoint:drawnLine.startPoint toCoordinateFromView:self.mapView];
     self.endCoordinate = [self.mapView convertPoint:drawnLine.endPoint toCoordinateFromView:self.mapView];
-    NSLog(@"end coordinates: %f and %f", self.endCoordinate.latitude, self.endCoordinate.longitude);
     NSMutableDictionary *coordinateInfo = [[NSMutableDictionary alloc] init];
     [coordinateInfo setObject:[NSNumber numberWithDouble:self.endCoordinate.latitude] forKey:@"endLat"];
     [coordinateInfo setObject:[NSNumber numberWithDouble:self.endCoordinate.longitude] forKey:@"endLon"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"endCoordinates" object:self userInfo:coordinateInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"endCoordinates" object:self userInfo:coordinateInfo]; //Sends correct location to adjustable view
     
 }
 

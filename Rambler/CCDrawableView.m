@@ -8,15 +8,13 @@
 
 #import "CCDrawableView.h"
 #import "CCEndPointPinView.h"
-#import "CCAdjustMapPointView.h"
-
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
 @interface CCDrawableView ()  <RelocateEndPointDelegate>
 
 @property (strong, nonatomic) CCEndPointPinView *pointerIndicator;
-@property (strong, nonatomic) CCAdjustMapPointView *adjustEndPointView;
+
 
 @property (nonatomic) CGPoint movableEndPoint;
 @property (nonatomic) CLLocationCoordinate2D endCoordinates;
@@ -42,7 +40,8 @@
         
         self.adjustEndPointView = [[CCAdjustMapPointView alloc] initWithFrame:CGRectMake(self.bounds.origin.x + 10, (self.frame.size.height / 2) - 150,
                                                                                          self.bounds.size.width - 20, 300)];
-    
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(allowDrawing:) name:@"closeButtonPressed" object:nil];
+        self.allowsDrawing = YES;
     }
     return self;
 }
@@ -72,6 +71,8 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if (self.allowsDrawing) {
+        
     
     for (UITouch *drawingFinger in touches) {
         if ([drawingFinger tapCount] > 1)  {
@@ -83,6 +84,8 @@
             [self.completedLines removeAllObjects];
         }
         
+        if (self.pointerIndicator.canBeMoved) {
+            
         NSValue *key = [NSValue valueWithNonretainedObject:drawingFinger];
         CGPoint lock = [drawingFinger locationInView:self];
         CCLine *currentLine = [[CCLine alloc] init];
@@ -92,6 +95,9 @@
         self.pointerIndicator.center = lock;
         
         [self.linesInProgress setObject:currentLine forKey:key];
+        }
+    }
+        
     }
 }
 
@@ -100,10 +106,13 @@
     for (UITouch *movingTouch in touches) {
         NSValue *anotherKey = [NSValue valueWithNonretainedObject:movingTouch];
         CCLine *anotherNewLine = [self.linesInProgress objectForKey:anotherKey];
+        if (self.pointerIndicator.canBeMoved) {
+            
         CGPoint lock = [movingTouch locationInView:self];
         anotherNewLine.endPoint = lock;
         self.pointerIndicator.hidden = NO;
         self.pointerIndicator.center = CGPointMake(lock.x + 11, lock.y - 9);
+        }
     }
     
     [self setNeedsDisplay];
@@ -151,8 +160,14 @@
 - (void)buttonPressedForRelocateView:(CGPoint)pointForCenter
 {
     [self addSubview:self.adjustEndPointView];
-  
+    self.allowsDrawing = NO;
 
 }
 
+- (void)allowDrawing:(NSNotification *)notification
+{
+    self.allowsDrawing = YES;
+    self.pointerIndicator.canBeMoved = YES;
+
+}
 @end

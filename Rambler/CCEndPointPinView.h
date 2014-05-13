@@ -21,5 +21,6 @@
 
 @property (nonatomic) CGPoint anchoredPoint;
 @property (strong, nonatomic) UIButton *moveViewButton;
+@property (nonatomic) BOOL canBeMoved;
 
 @end
