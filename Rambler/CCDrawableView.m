@@ -8,6 +8,7 @@
 
 #import "CCDrawableView.h"
 #import "CCEndPointPinView.h"
+
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
@@ -18,6 +19,7 @@
 
 @property (nonatomic) CGPoint movableEndPoint;
 @property (nonatomic) CLLocationCoordinate2D endCoordinates;
+
 
 
 @end
@@ -42,6 +44,8 @@
                                                                                          self.bounds.size.width - 20, 300)];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(allowDrawing:) name:@"closeButtonPressed" object:nil];
         self.allowsDrawing = YES;
+        
+        self.fingerView = [[CCFingerView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     }
     return self;
 }
@@ -72,7 +76,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if (self.allowsDrawing) {
-        
+    
     
     for (UITouch *drawingFinger in touches) {
         if ([drawingFinger tapCount] > 1)  {
@@ -88,9 +92,12 @@
             
         NSValue *key = [NSValue valueWithNonretainedObject:drawingFinger];
         CGPoint lock = [drawingFinger locationInView:self];
+            self.fingerView.center = CGPointMake(lock.x, lock.y - 80);
+            [self addSubview:self.fingerView];
         CCLine *currentLine = [[CCLine alloc] init];
         currentLine.startPoint = lock;
         currentLine.endPoint = lock;
+        [self.delegate fingerViewCenterFromMainMap:currentLine];
         self.pointerIndicator.hidden = YES;
         self.pointerIndicator.center = lock;
         
@@ -107,10 +114,11 @@
         NSValue *anotherKey = [NSValue valueWithNonretainedObject:movingTouch];
         CCLine *anotherNewLine = [self.linesInProgress objectForKey:anotherKey];
         if (self.pointerIndicator.canBeMoved) {
-            
+        [self.delegate fingerViewCenterFromMainMap:anotherNewLine];
         CGPoint lock = [movingTouch locationInView:self];
         anotherNewLine.endPoint = lock;
-        self.pointerIndicator.hidden = NO;
+        self.fingerView.center = CGPointMake(lock.x, lock.y - 80);
+        self.pointerIndicator.hidden = YES;
         self.pointerIndicator.center = CGPointMake(lock.x + 11, lock.y - 9);
         }
     }
@@ -146,6 +154,7 @@
         if (completedLine) {
             [self.completedLines addObject:completedLine];
             [self.linesInProgress removeObjectForKey:key];
+            [self.fingerView removeFromSuperview];
             [self.delegate mapPointsFromDrawnLine:completedLine];
         }
     }

@@ -24,6 +24,7 @@
 
 @property (nonatomic) CLLocationCoordinate2D startCoordinate;
 @property (nonatomic) CLLocationCoordinate2D endCoordinate;
+@property (nonatomic) CLLocationCoordinate2D locationInMotion;
 
 @property (strong, nonatomic) NSArray *annotationsArray;
 @property (strong, nonatomic) MKPlacemark *endPlacemark;
@@ -119,6 +120,7 @@
 }
 */
 
+#pragma mark - Route Line Delegate Methods
 
 - (void)mapPointsFromDrawnLine:(CCLine *)drawnLine
 {
@@ -127,8 +129,19 @@
     NSMutableDictionary *coordinateInfo = [[NSMutableDictionary alloc] init];
     [coordinateInfo setObject:[NSNumber numberWithDouble:self.endCoordinate.latitude] forKey:@"endLat"];
     [coordinateInfo setObject:[NSNumber numberWithDouble:self.endCoordinate.longitude] forKey:@"endLon"];
+    [coordinateInfo setObject:[NSNumber numberWithDouble:self.startCoordinate.latitude] forKey:@"startLat"];
+    [coordinateInfo setObject:[NSNumber numberWithDouble:self.startCoordinate.longitude] forKey:@"startLon"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"endCoordinates" object:self userInfo:coordinateInfo]; //Sends correct location to adjustable view
     
+}
+
+- (void)fingerViewCenterFromMainMap:(CCLine *)lineInMotion
+{
+    self.locationInMotion = [self.mapView convertPoint:lineInMotion.endPoint toCoordinateFromView:self.mapView];
+    MKCoordinateRegion tinyRegion;
+    tinyRegion.center = self.locationInMotion;
+    tinyRegion.span = MKCoordinateSpanMake(0.002, 0.002);
+    [self.drawableView.fingerView.mapView setRegion:tinyRegion];
 }
 
 - (IBAction)routeButtonPressed:(id)sender

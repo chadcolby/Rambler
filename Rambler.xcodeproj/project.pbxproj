@@ -34,6 +34,8 @@
 		8DA35BCD1922C7F3008DF664 /* CCAdjustMapPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA35BCC1922C7F3008DF664 /* CCAdjustMapPointView.m */; };
 		8DA35BCF1922D4ED008DF664 /* Map_Pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA35BCE1922D4ED008DF664 /* Map_Pin@2x.png */; };
 		8DA35BD11922D4FE008DF664 /* Map_Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA35BD01922D4FE008DF664 /* Map_Pin.png */; };
+		8DA35BD41922E27D008DF664 /* CCFingerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA35BD31922E27D008DF664 /* CCFingerView.m */; };
+		8DA35BD61922EC52008DF664 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA35BD51922EC52008DF664 /* QuartzCore.framework */; };
 		8DAEB686191C222200223F86 /* CCLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAEB685191C222200223F86 /* CCLine.m */; };
 		8DAEB689191C235D00223F86 /* CCDrawableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAEB688191C235D00223F86 /* CCDrawableView.m */; };
 		8DC5CCA31918189F000673FE /* CCMapPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC5CCA21918189F000673FE /* CCMapPageViewController.m */; };
@@ -90,6 +92,9 @@
 		8DA35BCC1922C7F3008DF664 /* CCAdjustMapPointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAdjustMapPointView.m; sourceTree = "<group>"; };
 		8DA35BCE1922D4ED008DF664 /* Map_Pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Map_Pin@2x.png"; sourceTree = "<group>"; };
 		8DA35BD01922D4FE008DF664 /* Map_Pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map_Pin.png; sourceTree = "<group>"; };
+		8DA35BD21922E27D008DF664 /* CCFingerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFingerView.h; sourceTree = SOURCE_ROOT; };
+		8DA35BD31922E27D008DF664 /* CCFingerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFingerView.m; sourceTree = SOURCE_ROOT; };
+		8DA35BD51922EC52008DF664 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8DAEB684191C222200223F86 /* CCLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLine.h; sourceTree = "<group>"; };
 		8DAEB685191C222200223F86 /* CCLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLine.m; sourceTree = "<group>"; };
 		8DAEB687191C235D00223F86 /* CCDrawableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDrawableView.h; sourceTree = "<group>"; };
@@ -108,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA35BD61922EC52008DF664 /* QuartzCore.framework in Frameworks */,
 				8D0E0C351909FB30005E3CFE /* CoreGraphics.framework in Frameworks */,
 				8D0E0C371909FB30005E3CFE /* UIKit.framework in Frameworks */,
 				8D0E0C331909FB30005E3CFE /* Foundation.framework in Frameworks */,
@@ -151,6 +157,7 @@
 		8D0E0C311909FB30005E3CFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DA35BD51922EC52008DF664 /* QuartzCore.framework */,
 				8D0E0C321909FB30005E3CFE /* Foundation.framework */,
 				8D0E0C341909FB30005E3CFE /* CoreGraphics.framework */,
 				8D0E0C361909FB30005E3CFE /* UIKit.framework */,
@@ -221,6 +228,8 @@
 		8D0E0C671909FB41005E3CFE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8DA35BD21922E27D008DF664 /* CCFingerView.h */,
+				8DA35BD31922E27D008DF664 /* CCFingerView.m */,
 				8DA35BCB1922C7F3008DF664 /* CCAdjustMapPointView.h */,
 				8DA35BCC1922C7F3008DF664 /* CCAdjustMapPointView.m */,
 				8DC5CCA11918189F000673FE /* CCMapPageViewController.h */,
@@ -408,6 +417,7 @@
 				8D843CC7190C2C2100DAA4B7 /* CCButtonClass.m in Sources */,
 				8D0E0C3F1909FB30005E3CFE /* main.m in Sources */,
 				8DAEB686191C222200223F86 /* CCLine.m in Sources */,
+				8DA35BD41922E27D008DF664 /* CCFingerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

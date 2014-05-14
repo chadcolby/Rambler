@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "CCLine.h"
 #import "CCAdjustMapPointView.h"
+#import "CCFingerView.h"
 
 
 @protocol RouteLineDelegate <NSObject>
 
 - (void)mapPointsFromDrawnLine:(CCLine *)drawnLine;
+- (void)fingerViewCenterFromMainMap:(CCLine *)lineInMotion;
 
 @end
 
@@ -26,8 +28,10 @@
 @property (nonatomic) BOOL allowsDrawing;
 
 @property (strong, nonatomic) CCAdjustMapPointView *adjustEndPointView;
+@property (strong, nonatomic) CCFingerView *fingerView;
 
 - (void)theEndOfDrawing:(NSSet *)touches;
 - (void)clearAllLines;
 
 @end
+
