@@ -178,6 +178,7 @@
 				8D843CC6190C2C2100DAA4B7 /* CCButtonClass.m */,
 				8DAEB683191C220100223F86 /* Drawing Objects */,
 				8D0E0C671909FB41005E3CFE /* Views */,
+				8DA35BD71922ECE8008DF664 /* View Controllers */,
 				8D0E0C4A1909FB31005E3CFE /* Images.xcassets */,
 				8DA35BD01922D4FE008DF664 /* Map_Pin.png */,
 				8DA35BCE1922D4ED008DF664 /* Map_Pin@2x.png */,
@@ -228,14 +229,12 @@
 		8D0E0C671909FB41005E3CFE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8DAEB687191C235D00223F86 /* CCDrawableView.h */,
+				8DAEB688191C235D00223F86 /* CCDrawableView.m */,
 				8DA35BD21922E27D008DF664 /* CCFingerView.h */,
 				8DA35BD31922E27D008DF664 /* CCFingerView.m */,
 				8DA35BCB1922C7F3008DF664 /* CCAdjustMapPointView.h */,
 				8DA35BCC1922C7F3008DF664 /* CCAdjustMapPointView.m */,
-				8DC5CCA11918189F000673FE /* CCMapPageViewController.h */,
-				8DC5CCA21918189F000673FE /* CCMapPageViewController.m */,
-				8D0E0C691909FB71005E3CFE /* CCLandingViewController.h */,
-				8D0E0C6A1909FB71005E3CFE /* CCLandingViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -249,13 +248,22 @@
 			name = "Map Annotations";
 			sourceTree = "<group>";
 		};
+		8DA35BD71922ECE8008DF664 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8DC5CCA11918189F000673FE /* CCMapPageViewController.h */,
+				8DC5CCA21918189F000673FE /* CCMapPageViewController.m */,
+				8D0E0C691909FB71005E3CFE /* CCLandingViewController.h */,
+				8D0E0C6A1909FB71005E3CFE /* CCLandingViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		8DAEB683191C220100223F86 /* Drawing Objects */ = {
 			isa = PBXGroup;
 			children = (
 				8D440AA719204736006AF9E7 /* CCEndPointPinView.h */,
 				8D440AA819204736006AF9E7 /* CCEndPointPinView.m */,
-				8DAEB687191C235D00223F86 /* CCDrawableView.h */,
-				8DAEB688191C235D00223F86 /* CCDrawableView.m */,
 				8DAEB684191C222200223F86 /* CCLine.h */,
 				8DAEB685191C222200223F86 /* CCLine.m */,
 			);

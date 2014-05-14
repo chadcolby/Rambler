@@ -20,7 +20,7 @@
         self.layer.borderColor = [[UIColor colorWithRed:23.f/255 green:20.f/255 blue:70.f/255 alpha:1.f] CGColor];
         
         self.mapView = [[MKMapView alloc] initWithFrame:self.frame];
-        
+        self.mapView.showsUserLocation = YES;
         [self addSubview:self.mapView];
         
         

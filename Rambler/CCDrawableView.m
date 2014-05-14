@@ -20,7 +20,7 @@
 @property (nonatomic) CGPoint movableEndPoint;
 @property (nonatomic) CLLocationCoordinate2D endCoordinates;
 
-
+@property (nonatomic) MKMapRect currentLocationRect;
 
 @end
 

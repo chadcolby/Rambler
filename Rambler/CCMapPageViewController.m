@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *routingIndicator;
 
 @property (strong, nonatomic) MKMapView *mapView;
-
+@property (strong, nonatomic) NSMutableDictionary *currentLocationDictionary;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CCDrawableView *drawableView;
@@ -52,6 +52,7 @@
     self.locationManager = [[CLLocationManager alloc] init];
     region.center.latitude = self.locationManager.location.coordinate.latitude;
     region.center.longitude = self.locationManager.location.coordinate.longitude;
+
     region.span = MKCoordinateSpanMake(0.05, 0.05);
     [self.mapView setRegion:region];
     [self.view addSubview:self.mapView];
